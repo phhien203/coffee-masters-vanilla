@@ -1,6 +1,7 @@
 import Store from "./services/Store.js";
 import API from "./services/API.js";
 import { loadMenuData } from "./services/Menu.js";
+import Router from "./services/Router.js";
 
 const $ = () => document.querySelector.call(this, arguments);
 const $$ = () => document.querySelectorAll.call(this, arguments);
@@ -12,7 +13,9 @@ HTMLElement.prototype.$$ = (s) => this.querySelectorAll(s);
 
 window.app = {};
 app.store = Store;
+app.router = Router;
 
 window.addEventListener("DOMContentLoaded", () => {
   loadMenuData();
+  app.router.init();
 });
