@@ -13,6 +13,7 @@
   "author": "Hien Pham",
   "license": "MIT",
   "dependencies": {
+    "next": "^13.4.12",
     "serve": "^14.2.0"
   }
 }
