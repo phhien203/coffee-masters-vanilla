@@ -1,0 +1,18 @@
+{
+  "name": "coffee-masters-vanilla",
+  "version": "1.0.0",
+  "description": "Simple SPA Coffee Order application written in vanilla JavaScript",
+  "scripts": {
+    "build": "echo \"Nothing to build\"",
+    "start": "serve -s ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phhien203/coffee-masters-vanilla.git"
+  },
+  "author": "Hien Pham",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
