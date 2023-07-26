@@ -1,11 +1,17 @@
 const Router = {
   init: () => {
+    // enhance the navigation links
     document.querySelectorAll("a.navlink").forEach((a) => {
       a.addEventListener("click", (e) => {
         e.preventDefault();
-        const url = e.target.getAttribute('href');
+        const url = e.target.getAttribute("href");
         Router.go(url);
       });
+    });
+
+    // listen to and handle URL changes
+    window.addEventListener("popstate", (e) => {
+      Router.go(e.state.route, false);
     });
 
     Router.go(location.pathname);
@@ -19,13 +25,18 @@ const Router = {
 
     switch (route) {
       case "/":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Menu";
+        pageElement = document.createElement("menu-page");
         break;
       case "/order":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Your Order";
+        pageElement = document.createElement("order-page");
         break;
+      default:
+        if (route.startsWith("/product-")) {
+          pageElement = document.createElement("details-page");
+          pageElement.dataset.productId = route.substring(
+            route.lastIndexOf("-") + 1
+          );
+        }
     }
 
     if (pageElement) {
