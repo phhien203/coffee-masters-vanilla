@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple SPA Coffee Order application written in vanilla JavaScript",
   "scripts": {
-    "build": "echo \"Nothing to build\" && npm run start",
+    "build": "echo \"Nothing to build\"",
     "start": "serve -s ."
   },
   "repository": {
